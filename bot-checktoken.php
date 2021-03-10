@@ -21,13 +21,14 @@ if ( sizeof($request_array['events']) > 0 ) {
         $reply_token = $event['replyToken'];
         $message = $events['events'][0]['message']['text'];
         $text = $event['message']['text'];
-        if(preg_match("/ชื่ออะไร/", $text)
-           {
-            $result = "สวัสดีมึงใคร";   
-           }
-           else{
-            $result = "กูไม่เข้าใจ";   
-           }
+//         if(preg_match("/ชื่ออะไร/", $text)
+//            {
+//             $result = "สวัสดีมึงใคร";   
+//            }
+//            else{
+//             $result = "กูไม่เข้าใจ";   
+//            }
+        $result = "haha";
         $data = [
             'replyToken' => $reply_token,
             'messages' => [['type' => 'text', 'text' => $result]] 
