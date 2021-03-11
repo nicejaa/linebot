@@ -2,8 +2,6 @@
 <?php
 
 include 'connectdb.php';
-echo '<script type="text/javascript">';
- $access_token =  echo 'liff.getAccessToken();</script>';
 
 $sql = "SELECT * FROM user Where User_Token = ";
 $API_URL = 'https://api.line.me/v2/bot/message';
