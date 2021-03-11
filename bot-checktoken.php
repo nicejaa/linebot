@@ -2,7 +2,7 @@
 <?php
 include 'connectdb.php';
 
-$sql = "SELECT * FROM user Where User_Token = ";
+
 $API_URL = 'https://api.line.me/v2/bot/message';
 $ACCESS_TOKEN = 'gMEkhBcxQF0jT72jVrQZfZ8N3hU3gKmS1F3rjRZmeUuVn5ccNfh4AJQxzQ0L1nFJyOSLgc1vBCxX/Sk7r8cAJtEts0vTaK9Z7MA8Xff4Kgx1JoEj+KtyR+kn1j80SZFMus8th1QNI4vMSKHI5vRGbwdB04t89/1O/w1cDnyilFU='; 
 $channelSecret = 'aa92cfff7cdb8b56bdb472b9102bba32';
@@ -28,10 +28,22 @@ if ( sizeof($request_array['events']) > 0 ) {
         if($text == "ฉันคือใคร")
            {
             $result = $event['source']['userId'];  
+            $txt = '';
+            $sql = "SELECT * FROM user Where User_Token = '".$result."'";
+            $result = $con->query($sql);
+            if ($result->num_rows > 0) {
+  // output data of each row
+            while($row = $result->fetch_assoc()) {
+                $txt = "สวัสดีคุณ".$row['User_name'];
+                }
+                } else {
+                $txt = "ไม่มีข้อมูล";
+                }
+            $con->close();
             
              $data = [
             'replyToken' => $reply_token,
-                 'messages' => [['type' => 'text', 'text' => $result ]]
+                 'messages' => [['type' => 'text', 'text' => $txt ]]
 //             'messages' => [['type' => 'text', 'text' => $result]] 
                     ];
         
