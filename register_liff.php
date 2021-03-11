@@ -48,7 +48,26 @@ if(isset($_POST['btn-submit'])){
 include 'connectdb.php';
 $emp_id = $_POST['emp_id'];
 $token_id = $_POST['Token'];
-//   echo $emp_id;
-//   echo $token_id;
+
+ $sql = "UPDATE user SET User_Token='".$token_id."' WHERE User_id='".$emp_id."'";
+
+if ($conn->query($sql) === TRUE) {
+  echo '<script type="text/javascript">';
+  echo '  $(document).ready(function() {
+swal({ 
+  icon: "success",
+  title: "เพิ่มงานสำเร็จ",
+   text: "ดำเนินการสำเร็จกรุณาตรวจสอบงานของคุณ",
+  }).then(function() {
+    // Redirect the user
+   
+    })});</script>';
+
+} else {
+  echo "Error updating record: " . $conn->error;
+}
+
+$conn->close();
+  
 }
 ?>
