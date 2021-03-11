@@ -30,7 +30,7 @@
   <script>
     function runApp() {
       liff.getProfile().then(profile => {
-         document.getElementById("Token").value = liff.getAccessToken();
+         document.getElementById("Token").value = liff.profile.userId();
       }).catch(err => console.error(err));
     }
     liff.init({ liffId: "1655742895-1gkV7XQB" }, () => {
