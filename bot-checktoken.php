@@ -24,13 +24,14 @@ if ( sizeof($request_array['events']) > 0 ) {
         $reply_token = $event['replyToken'];
         $message = $events['events'][0]['message']['text'];
         $text = $event['message']['text'];
-  
+        $userId = $request_array['events'][0]['source']['userId'];
         if($text == "ฉันคือใคร")
            {
             $result = "สวัสดี";   
             
              $data = [
-            'replyToken' => $reply_token,
+             'userID' => $userId,
+//             'replyToken' => $reply_token,
                  'messages' => [['type' => 'text', 'text' => json_encode($request_array) ]]
 //             'messages' => [['type' => 'text', 'text' => $result]] 
                     ];
