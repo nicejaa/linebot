@@ -1,6 +1,5 @@
 
 <?php
- liff.closeWindow();
 include 'connectdb.php';
 
 $sql = "SELECT * FROM user Where User_Token = ";
