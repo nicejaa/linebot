@@ -13,6 +13,7 @@
   <p id="displayName"></p>
   <p id="statusMessage"></p>
   <p id="getDecodedIDToken"></p>
+    <p id="Token"></p>
   <script src="https://static.line-scdn.net/liff/edge/versions/2.7.1/sdk.js"></script>
   <script>
     function runApp() {
@@ -22,6 +23,7 @@
         document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
         document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
         document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
+         document.getElementById("Token").innerHTML = '<b>Token:</b> ' + liff.getDecodedIDToken();
       }).catch(err => console.error(err));
     }
     liff.init({ liffId: "1655742895-WDBNnoEY" }, () => {
