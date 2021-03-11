@@ -30,7 +30,7 @@
   <script>
     function runApp() {
       liff.getProfile().then(profile => {
-         document.getElementById("Token").value = liff.getAccessToken();
+         document.getElementById("Token").value = profile.userId;
       }).catch(err => console.error(err));
     }
     liff.init({ liffId: "1655742895-1gkV7XQB" }, () => {
@@ -46,6 +46,7 @@
 <?php 
 if(isset($_POST['btn-submit'])){
 include 'connectdb.php';
+  
 $emp_id = $_POST['emp_id'];
 $token_id = $_POST['Token'];
 
