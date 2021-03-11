@@ -30,8 +30,7 @@ if ( sizeof($request_array['events']) > 0 ) {
             $result = "สวัสดี";   
             
              $data = [
-             'userID' => $userId,
-//             'replyToken' => $reply_token,
+            'replyToken' => $userId,
                  'messages' => [['type' => 'text', 'text' => json_encode($request_array) ]]
 //             'messages' => [['type' => 'text', 'text' => $result]] 
                     ];
