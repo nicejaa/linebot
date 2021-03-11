@@ -24,10 +24,10 @@ if ( sizeof($request_array['events']) > 0 ) {
         $reply_token = $event['replyToken'];
         $message = $events['events'][0]['message']['text'];
         $text = $event['message']['text'];
-
+        
         if($text == "ฉันคือใคร")
            {
-            $result = "สวัสดี";   
+            $result = $events['events'][0]['source']['userId'];   
             
              $data = [
             'replyToken' => $reply_token,
