@@ -20,7 +20,7 @@
       <input type="text" class="form-control" id="emp_id" placeholder="โปรดกรอกรหัสพนักงาน" name="emp_id">
     </div>
        <input type="hidden" class="form-control" id="Token" readonly="" placeholder="โปรดกรอกรหัสพนักงาน" name="Token">
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" name="btn-submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
   
@@ -42,10 +42,11 @@
 </body>
 </html>
 <?php 
+if(isset($_POST['btn-submit'])){
 include 'connectdb.php';
 $emp_id = $_POST['emp_id'];
 $token_id = $_POST['Token'];
 
-echo $token_id;
-
+  echo $token_id;
+}
 ?>
