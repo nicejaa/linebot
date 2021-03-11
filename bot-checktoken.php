@@ -22,7 +22,6 @@ if ( sizeof($request_array['events']) > 0 ) {
         $reply_message = '';
         $result = '';
         $reply_token = $event['replyToken'];
-         $userId = $event['userId'];
         $message = $events['events'][0]['message']['text'];
         $text = $event['message']['text'];
   
@@ -31,7 +30,7 @@ if ( sizeof($request_array['events']) > 0 ) {
             $result = "สวัสดี";   
             
              $data = [
-            'replyToken' => $userId,
+            'replyToken' => $reply_token,
                  'messages' => [['type' => 'text', 'text' => json_encode($request_array) ]]
 //             'messages' => [['type' => 'text', 'text' => $result]] 
                     ];
