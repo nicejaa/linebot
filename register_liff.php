@@ -6,6 +6,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
   <title>My LIFF v2</title>
   <style>
     #pictureUrl { display: block; margin: 0 auto }
@@ -46,7 +48,7 @@ if(isset($_POST['btn-submit'])){
 include 'connectdb.php';
 $emp_id = $_POST['emp_id'];
 $token_id = $_POST['Token'];
-  echo $emp_id;
-  echo $token_id;
+//   echo $emp_id;
+//   echo $token_id;
 }
 ?>
