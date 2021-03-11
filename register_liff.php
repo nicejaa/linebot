@@ -51,7 +51,7 @@ $token_id = $_POST['Token'];
 
  $sql = "UPDATE user SET User_Token='".$token_id."' WHERE User_id='".$emp_id."'";
 
-if ($conn->query($sql) === TRUE) {
+if ($con->query($sql) === TRUE) {
   echo '<script type="text/javascript">';
   echo '  $(document).ready(function() {
 swal({ 
@@ -64,10 +64,10 @@ swal({
     })});</script>';
 
 } else {
-  echo "Error updating record: " . $conn->error;
+  echo "Error updating record: " . $con->error;
 }
 
-$conn->close();
+$con->close();
   
 }
 ?>
