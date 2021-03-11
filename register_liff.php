@@ -1,4 +1,3 @@
-
 <html>
 <head>
   <meta charset="UTF-8">
@@ -65,6 +64,16 @@ swal({
     })});</script>';
     liff.closeWindow();
 } else {
+   echo '<script type="text/javascript">';
+  echo '  $(document).ready(function() {
+swal({ 
+  icon: "error",
+  title: "ดำเนินการไม่สำเร็จ",
+   text: "โปรดตรวจสอบรหัสผ่านให้ถูกต้อง",
+  }).then(function() {
+    // Redirect the user
+   liff.closeWindow();
+    })});</script>';
   echo "Error updating record: " . $con->error;
 }
 
