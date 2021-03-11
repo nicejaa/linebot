@@ -25,7 +25,7 @@ if ( sizeof($request_array['events']) > 0 ) {
   
         if($text == "ชื่ออะไร")
            {
-            $result = "สวัสดีมึงใคร";   
+            $result = "สวัสดี";   
             
              $data = [
             'replyToken' => $reply_token,
@@ -37,7 +37,7 @@ if ( sizeof($request_array['events']) > 0 ) {
             
            }
            else{
-            $result = "กูไม่เข้าใจ";   
+            $result = "ฉันไม่เข้าใจ";   
                
              $data = [
             'replyToken' => $reply_token,
