@@ -19,7 +19,7 @@
       <label for="emp_id">รหัสพนักงาน:</label>
       <input type="text" class="form-control" id="emp_id" placeholder="โปรดกรอกรหัสพนักงาน" name="emp_id">
     </div>
-       <input type="text" class="form-control" id="Token" readonly="" placeholder="โปรดกรอกรหัสพนักงาน" name="token_id">
+       <input type="hidden" class="form-control" id="Token" readonly="" placeholder="โปรดกรอกรหัสพนักงาน" name="Token">
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
@@ -43,6 +43,9 @@
 </html>
 <?php 
 include 'connectdb.php';
+$emp_id = $_POST['emp_id'];
+$token_id = $_POST['Token'];
 
+echo $token_id;
 
 ?>
