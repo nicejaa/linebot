@@ -27,7 +27,7 @@ if ( sizeof($request_array['events']) > 0 ) {
         
         if($text == "ฉันคือใคร")
            {
-            $result = $event['source']['userId'],  
+            $result = $event['source']['userId'];  
             
              $data = [
             'replyToken' => $reply_token,
