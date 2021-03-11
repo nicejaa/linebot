@@ -35,7 +35,7 @@
          document.getElementById("Token").innerHTML = '<b>Token:</b> ' + liff.getAccessToken();
       }).catch(err => console.error(err));
     }
-    liff.init({ liffId: "1655742895-WDBNnoEY" }, () => {
+    liff.init({ liffId: "1655742895-1gkV7XQB" }, () => {
       if (liff.isLoggedIn()) {
         runApp()
       } else {
