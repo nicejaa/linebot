@@ -14,7 +14,6 @@
 <body>
   <h3>ยืนยันสมาชิก</h3>
 <div class="container">
-  <h2>Stacked form</h2>
   <form action="#" method="post">
     <div class="form-group">
       <label for="emp_id">รหัสพนักงาน:</label>
