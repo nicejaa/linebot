@@ -56,13 +56,13 @@ if ($con->query($sql) === TRUE) {
   echo '  $(document).ready(function() {
 swal({ 
   icon: "success",
-  title: "เพิ่มงานสำเร็จ",
-   text: "ดำเนินการสำเร็จกรุณาตรวจสอบงานของคุณ",
+  title: "ยืนยันสำเร็จ",
+   text: "ดำเนินการสำเร็จ",
   }).then(function() {
     // Redirect the user
-   
+   liff.closeWindow();
     })});</script>';
-
+    liff.closeWindow();
 } else {
   echo "Error updating record: " . $con->error;
 }
