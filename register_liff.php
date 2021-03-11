@@ -33,7 +33,7 @@
         document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
         document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
         document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
-         document.getElementById("Token").innerHTML = '<b>Token:</b> ' + liff.getAccessToken();
+         document.getElementById("Token").value = liff.getAccessToken();
       }).catch(err => console.error(err));
     }
     liff.init({ liffId: "1655742895-1gkV7XQB" }, () => {
