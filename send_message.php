@@ -15,7 +15,13 @@
 </head>
 <body>
 <div class="container">
+  <br>
+  <hr>
   <form action="#" method="post">
+       <div class="form-group">
+      <label for="emp_id">ข้อความ:</label>
+      <input type="text" class="form-control" id="txt_id" placeholder="พิมพ์ข้อความ" name="txt_id">
+    </div>
     <div class="form-group">
       <label for="emp_id">User ID:</label>
       <input type="text" class="form-control" id="token_id" placeholder="โปรดกรอกรหัส UserID" name="token_id">
@@ -38,14 +44,15 @@
    $message = $arrayJson['events'][0]['message']['text'];
    //รับ id ของผู้ใช้
    $id = $_POST['token_id'];
+   $txt = $_POST['txt_id'];
       
    #ตัวอย่าง Message Type "Text + Sticker"
       $arrayPostData['to'] = $id;
       $arrayPostData['messages'][0]['type'] = "text";
-      $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";
-      $arrayPostData['messages'][1]['type'] = "sticker";
-      $arrayPostData['messages'][1]['packageId'] = "2";
-      $arrayPostData['messages'][1]['stickerId'] = "34";
+      $arrayPostData['messages'][0]['text'] = $txt;
+//       $arrayPostData['messages'][1]['type'] = "sticker";
+//       $arrayPostData['messages'][1]['packageId'] = "2";
+//       $arrayPostData['messages'][1]['stickerId'] = "34";
       pushMsg($arrayHeader,$arrayPostData);
       
       
