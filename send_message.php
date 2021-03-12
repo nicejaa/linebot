@@ -1,4 +1,34 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+  <title>LIFF REGISTER</title>
+  <style>
+    #pictureUrl { display: block; margin: 0 auto }
+  </style>
+</head>
+<body>
+  <h3>ส่งข้อความ</h3>
+<div class="container">
+  <form action="#" method="post">
+    <div class="form-group">
+      <label for="emp_id">User ID:</label>
+      <input type="text" class="form-control" id="token_id" placeholder="โปรดกรอกรหัส UserID" name="token_id">
+    </div>
+    <button type="submit" name="btn-submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+</body>
+</html>
+
 <?php
+   if(isset($_POST['btn-submit'])){
    $accessToken = "gMEkhBcxQF0jT72jVrQZfZ8N3hU3gKmS1F3rjRZmeUuVn5ccNfh4AJQxzQ0L1nFJyOSLgc1vBCxX/Sk7r8cAJtEts0vTaK9Z7MA8Xff4Kgx1JoEj+KtyR+kn1j80SZFMus8th1QNI4vMSKHI5vRGbwdB04t89/1O/w1cDnyilFU=";//copy ข้อความ Channel access token ตอนที่ตั้งค่า
    $content = file_get_contents('php://input');
    $arrayJson = json_decode($content, true);
@@ -8,7 +38,8 @@
    //รับข้อความจากผู้ใช้
    $message = $arrayJson['events'][0]['message']['text'];
    //รับ id ของผู้ใช้
-   $id = 'U306d5bcfb4110b6ca721033437ad55a7';
+   $id = $_POST['token_id'];
+      if($id != null){
    #ตัวอย่าง Message Type "Text + Sticker"
       $arrayPostData['to'] = $id;
       $arrayPostData['messages'][0]['type'] = "text";
@@ -17,7 +48,16 @@
       $arrayPostData['messages'][1]['packageId'] = "2";
       $arrayPostData['messages'][1]['stickerId'] = "34";
       pushMsg($arrayHeader,$arrayPostData);
-   
+       echo '<script type="text/javascript">';
+  echo '  $(document).ready(function() {
+swal({ 
+  icon: "success",
+  title: "ยืนยันสำเร็จ",
+   text: "ดำเนินการสำเร็จ",
+  }).then(function() {
+    // Redirect the user
+    })});</script>';
+      }
    function pushMsg($arrayHeader,$arrayPostData){
       $strUrl = "https://api.line.me/v2/bot/message/push";
       $ch = curl_init();
@@ -32,4 +72,5 @@
       curl_close ($ch);
    }
    exit;
+   }
 ?>
