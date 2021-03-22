@@ -13,6 +13,8 @@ $query = mysqli_query($con,$sql);
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
   <title>Send MESSAGE TOKEN</title>
   <style>
     #pictureUrl { display: block; margin: 0 auto }
@@ -34,7 +36,7 @@ $query = mysqli_query($con,$sql);
     <button type="submit" name="btn-submit" class="btn btn-primary">Submit</button>
   </form>
  
- <table class="table table-striped">
+ <table id="table_id" class="table table-striped">
     <thead>
       <tr>
         <th>รหัสพนักงาน</th>
@@ -57,6 +59,11 @@ $query = mysqli_query($con,$sql);
   </table>
   
 </div>
+  <script>
+    $(document).ready( function () {
+    $('#table_id').DataTable();
+} );
+  </script>
 </body>
 </html>
 
