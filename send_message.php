@@ -50,7 +50,7 @@ $query = mysqli_query($con,$sql);
       <tr>
         <td><?=$row['User_id'];?></td>
         <td><?=$row['User_name'];?></td>
-        <td><?=$row['User_token'];?></td>
+        <td><?=$row['User_Token'];?></td>
       </tr>
     </tbody>
    <?php } } ?>
