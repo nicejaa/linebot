@@ -42,6 +42,7 @@ $query = mysqli_query($con,$sql);
         <th>รหัสพนักงาน</th>
         <th>ชื่อ-สกุล</th>
         <th>Token</th>
+        <th>Function</th>
       </tr>
     </thead>
     <?php
