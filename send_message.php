@@ -30,7 +30,7 @@ $query = mysqli_query($con,$sql);
       <input type="text" class="form-control" id="txt_id" placeholder="พิมพ์ข้อความ" name="txt_id">
     </div>
     <div class="form-group">
-      <label for="emp_id">User ID:</label>
+      <label for="emp_id">Token Send:</label>
       <input type="text" class="form-control" id="token_id" placeholder="โปรดกรอกรหัส UserID" name="token_id">
     </div>
     <button type="submit" name="btn-submit" class="btn btn-primary">Submit</button>
@@ -53,6 +53,7 @@ $query = mysqli_query($con,$sql);
         <td><?=$row['User_id'];?></td>
         <td><?=$row['User_name'];?></td>
         <td><?=$row['User_Token'];?></td>
+        <td><a href="" class="btn btn-primary">เลือก</a></td>
       </tr>
     </tbody>
    <?php } } ?>
