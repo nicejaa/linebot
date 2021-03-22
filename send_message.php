@@ -1,3 +1,8 @@
+<?php 
+include 'connectdb.php';
+$sql = "select * from user";
+$query = mysqli_query($con,$sql);
+?>
 <html>
 <head>
   <meta charset="UTF-8">
@@ -28,6 +33,30 @@
     </div>
     <button type="submit" name="btn-submit" class="btn btn-primary">Submit</button>
   </form>
+ 
+ <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>รหัสพนักงาน</th>
+        <th>ชื่อ-สกุล</th>
+        <th>Token</th>
+      </tr>
+    </thead>
+    <?php
+  if (mysqli_num_rows($query) > 0) {
+    // output data of each row
+    while($row = mysqli_fetch_assoc($query)) {
+  ?>
+    <tbody>
+      <tr>
+        <td><?=$row['User_id'];?></td>
+        <td><?=$row['User_name'];?></td>
+        <td><?=$row['User_token'];?></td>
+      </tr>
+    </tbody>
+   <?php } ?>
+  </table>
+  
 </div>
 </body>
 </html>
