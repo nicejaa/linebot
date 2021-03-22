@@ -66,6 +66,7 @@ $query = mysqli_query($con,$sql);
     $('#table_id').DataTable();
 } );
   </script>
+  
 </body>
 </html>
 
