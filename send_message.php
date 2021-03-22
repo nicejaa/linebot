@@ -44,7 +44,6 @@ $query = mysqli_query($con,$sql);
     </thead>
     <?php
   if (mysqli_num_rows($query) > 0) {
-    // output data of each row
     while($row = mysqli_fetch_assoc($query)) {
   ?>
     <tbody>
@@ -54,7 +53,7 @@ $query = mysqli_query($con,$sql);
         <td><?=$row['User_token'];?></td>
       </tr>
     </tbody>
-   <?php } ?>
+   <?php } } ?>
   </table>
   
 </div>
